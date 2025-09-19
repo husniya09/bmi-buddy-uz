@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Calculator, Activity, Heart } from 'lucide-react';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 interface BMIResult {
   bmi: number;
@@ -79,7 +80,12 @@ export const BMICalculator: React.FC = () => {
   const isFormValid = height !== '' && weight !== '' && parseFloat(height) > 0 && parseFloat(weight) > 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/10 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/10 flex items-center justify-center p-4 relative">
+      {/* Theme Toggle */}
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
+      
       <div className="w-full max-w-md space-y-6">
         {/* Header */}
         <div className="text-center space-y-2 animate-fade-in">
